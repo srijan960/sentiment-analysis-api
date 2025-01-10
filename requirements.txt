@@ -1,0 +1,11 @@
+fastapi==0.112.0
+uvicorn==0.30.5
+transformers==4.44.0
+torch==2.2.1
+tokenizers==0.19.1
+numpy==1.26.4
+scipy==1.14.0
+pydantic==2.8.2
+python-multipart==0.0.20
+requests==2.32.3
+h11==0.14.0

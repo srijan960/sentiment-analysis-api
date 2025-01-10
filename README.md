@@ -25,7 +25,7 @@ This project is a FastAPI-based backend for performing sentiment analysis on con
 
 ```bash
 git clone https://github.com/srijan960/sentiment-analysis-api.git
-cd your-repo
+cd sentiment-analysis-api
 ```
 
 **2. Create a Virtual Environment**

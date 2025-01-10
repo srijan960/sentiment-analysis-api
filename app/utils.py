@@ -34,12 +34,12 @@ def analyze_transcript(file_path: Path) -> dict:
 
     sentence_details = []
     speaker_scores = {}
-    aggregated_scores = {}
 
     for speaker_info, sentence in matches:
         speaker_info = speaker_info.strip()
         sentence = preprocess_text(sentence.strip())
-        if not sentence: continue
+        if not sentence:
+            continue
 
         # Perform sentiment analysis
         encoded_input = tokenizer(sentence, return_tensors="pt")
@@ -70,14 +70,15 @@ def analyze_transcript(file_path: Path) -> dict:
         speaker_scores[speaker_info]["positive"] += positive_score
 
     # Compute overall scores for each speaker
-    overall_scores = {}
-    for speaker, scores in speaker_scores.items():
-        overall_scores[speaker] = {
+    overall_scores = {
+        speaker: {
             "overall_sentiment": "POSITIVE" if scores["positive"] > scores["negative"] else "NEGATIVE",
             "scores": scores
         }
+        for speaker, scores in speaker_scores.items()
+    }
 
     return {
         "sentence_details": sentence_details,
-        "overall_scores": overall_scores,  # Add this field to match the SentimentResponse model
+        "overall_scores": overall_scores,
     }

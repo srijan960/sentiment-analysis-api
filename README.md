@@ -24,7 +24,7 @@ This project is a FastAPI-based backend for performing sentiment analysis on con
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/srijan960/your-repo.git
 cd your-repo
 ```
 
